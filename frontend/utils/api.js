@@ -1,4 +1,4 @@
-const API_BASE_URL = process.env.API_URL || 'https://hour-app-asii-1eli.vercel.app';
+const API_BASE_URL = process.env.API_URL || 'https://backend-hour-app.vercel.app';
 
 const getAuthHeaders = () => {
   const token = localStorage.getItem('token');
