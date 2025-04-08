@@ -1,0 +1,307 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.custom-scrollbar-dense::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+.custom-scrollbar-dense::-webkit-scrollbar-thumb {
+  background: #555;
+}
+
+@layer utilities {
+  .input-class {
+    @apply text-16 placeholder:text-16 rounded-lg border border-gray-300 text-gray-900 placeholder:text-gray-500;
+  }
+
+  .sheet-content button {
+    @apply focus:ring-0 focus-visible:ring-transparent focus:ring-offset-0 focus-visible:ring-offset-0 focus-visible:outline-none focus-visible:border-none !important;
+  }
+
+  .text14_padding10 {
+    @apply text-14 px-4 py-2.5 font-semibold;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .header-2 {
+    @apply text-18 font-semibold text-gray-900;
+  }
+
+  .text-10 {
+    @apply text-[10px] leading-[14px];
+  }
+
+  .text-12 {
+    @apply text-[12px] leading-[16px];
+  }
+
+  .text-14 {
+    @apply text-[14px] leading-[20px];
+  }
+
+  .text-16 {
+    @apply text-[16px] leading-[24px];
+  }
+
+  .text-18 {
+    @apply text-[18px] leading-[22px];
+  }
+
+  .text-20 {
+    @apply text-[20px] leading-[24px];
+  }
+
+  .text-24 {
+    @apply text-[24px] leading-[30px];
+  }
+
+  .text-26 {
+    @apply text-[26px] leading-[32px];
+  }
+
+  .text-30 {
+    @apply text-[30px] leading-[38px];
+  }
+
+  .text-36 {
+    @apply text-[36px] leading-[44px];
+  }
+
+  /* Home */
+  .home {
+    @apply no-scrollbar flex w-full flex-row max-xl:max-h-screen max-xl:overflow-y-scroll;
+  }
+
+  .home-content {
+    @apply no-scrollbar flex w-full flex-1 flex-col gap-8 px-5 sm:px-8 py-7 lg:py-12 xl:max-h-screen xl:overflow-y-scroll;
+  }
+
+  .home-header {
+    @apply flex flex-col justify-between gap-8;
+  }
+
+  .total-balance {
+    @apply flex w-full items-center gap-4 rounded-xl border border-gray-200 p-4 shadow-chart sm:gap-6 sm:p-6;
+  }
+
+  .total-balance-chart {
+    @apply flex size-full max-w-[100px] items-center sm:max-w-[120px];
+  }
+
+  .total-balance-label {
+    @apply text-14 font-medium text-gray-600;
+  }
+
+  .total-balance-amount {
+    @apply text-24 lg:text-30 flex-1 font-semibold text-gray-900;
+  }
+
+  .recent-transactions {
+    @apply flex w-full flex-col gap-6;
+  }
+
+  .view-all-btn {
+    @apply text-14 rounded-lg border border-gray-300 px-4 py-2.5 font-semibold text-gray-700;
+  }
+
+  .recent-transactions {
+    @apply flex w-full flex-col gap-6;
+  }
+
+  .recent-transactions-label {
+    @apply text-20 md:text-24 font-semibold text-gray-900;
+  }
+
+  .recent-transactions-tablist {
+    @apply custom-scrollbar mb-8 flex w-full flex-nowrap;
+  }
+
+  /* Root Layout */
+  .root-layout {
+    @apply flex h-16 items-center justify-between p-5 shadow-creditCard sm:p-8 md:hidden;
+  }
+
+  /* Bank Info */
+  .bank-info_content {
+    @apply flex flex-1 items-center justify-between gap-2 overflow-hidden;
+  }
+
+  /* Footer */
+  .footer {
+    @apply flex cursor-pointer items-center justify-between gap-2 py-6;
+  }
+
+  .footer_name {
+    @apply flex size-10 items-center justify-center rounded-full bg-gray-200 max-xl:hidden;
+  }
+
+  .footer_email {
+    @apply flex flex-1 flex-col justify-center max-xl:hidden;
+  }
+
+  .footer_name-mobile {
+    @apply flex size-10 items-center justify-center rounded-full bg-gray-200;
+  }
+
+  .footer_email-mobile {
+    @apply flex flex-1 flex-col justify-center;
+  }
+
+  .footer_image {
+    @apply relative size-5 max-xl:w-full max-xl:flex max-xl:justify-center max-xl:items-center;
+  }
+
+  .footer_image-mobile {
+    @apply relative size-5;
+  }
+
+  @layer components {
+        /* Sidebar */
+        .sidebar {
+          @apply fixed inset-y-0 left-0 w-[280px] bg-[#1c2536] border-r border-gray-700 flex flex-col overflow-hidden;
+        }
+    
+        .sidebar-header {
+          @apply p-4 border-b border-gray-700 flex-shrink-0;
+        }
+    
+        .sidebar-logo {
+          @apply flex items-center gap-2 ml-4;
+        }
+    
+        .sidebar-title {
+          @apply text-xl font-bold text-white;
+        }
+    
+        .sidebar-nav {
+          @apply flex-1 p-4 space-y-4 overflow-y-auto custom-scrollbar;
+        }
+    
+        .sidebar-section {
+          @apply space-y-1;
+        }
+    
+        .sidebar-section-title {
+          @apply px-4 text-xs uppercase text-gray-400 font-semibold;
+        }
+    
+        .sidebar-link {
+          @apply flex items-center gap-3 px-4 py-2 rounded-full transition-colors text-gray-300 hover:bg-gray-700 hover:text-white whitespace-nowrap;
+        }
+    
+        .sidebar-link-active {
+          @apply bg-[#252e3e] text-white rounded-full font-bold;
+        }
+    
+        .sidebar-user {
+          @apply p-4 border-t border-gray-700 flex items-center gap-3 flex-shrink-0;
+        }
+    
+        .sidebar-user-info {
+          @apply flex-1 min-w-0;
+        }
+    
+        .sidebar-user-name {
+          @apply text-sm text-gray-200 font-medium truncate;
+        }
+    
+        .sidebar-user-email {
+          @apply text-xs text-gray-400 truncate;
+        }
+    
+        .sidebar-logout {
+          @apply text-red-400 hover:text-red-300;
+        }
+  }
+
+  /*Loading bar */
+  .loading-bar {
+    @apply fixed top-0 left-0 h-1 bg-blue-500;
+    animation: loading 2s infinite;
+    width: 0%;
+    z-index: 9999;
+  }
+
+  @keyframes loading {
+    0% {
+      width: 0%;
+      opacity: 1;
+    }
+    50% {
+      width: 70%;
+      opacity: 0.5;
+    }
+    100% {
+      width: 100%;
+      opacity: 0;
+    }
+  }
+
+  /* Custom class for login page sides */
+  .login-side {
+    @apply w-1/2 flex flex-col h-full justify-center items-center;
+  }
+}
